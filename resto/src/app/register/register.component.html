@@ -1,0 +1,75 @@
+<h2>Register New User</h2>
+<div *ngIf = "alert" class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Success!</strong> User registered successfully.
+    <button (click) = "closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+<form [formGroup] = "register" (ngSubmit) ="collection()">
+    <div class="from-row">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Enter name" formControlName="name">
+        </div>
+        <div class="form-group">
+          <div ngClass = "myColor" *ngIf = "fname.invalid && fname.touched">
+            <span *ngIf = "fname.errors.required then errRequired; else nameelse">
+                <!-- <b ngClass = "myColor">This field is required</b> -->
+            </span>
+            <ng-template #nameelse>
+                <span *ngIf = "fname.errors.pattern">
+                    <b>Name should only have alphabets</b>
+                </span>
+            </ng-template>
+          </div>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter email" formControlName="email">
+        </div>
+        <div class="form-group">
+          <div ngClass = "myColor" *ngIf = "emailId.invalid && emailId.touched">
+            <span *ngIf = "emailId.errors.required then errRequired; else emailelse">
+                <!-- <b ngClass = "myColor">This field is required</b> -->
+            </span>
+            <ng-template #emailelse>
+                <span *ngIf = "emailId.errors.email">
+                    <b>Invalid Email ID</b>
+                </span>
+            </ng-template>
+          </div>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" placeholder="Enter password" formControlName="password">
+        </div>
+        <div class="form-group">
+          <div ngClass = "myColor" *ngIf = "usrpass.invalid && usrpass.touched">
+            <span *ngIf = "usrpass.errors.required then errRequired; else usrpasselse">
+                <!-- <b ngClass = "myColor">This field is required</b> -->
+            </span>
+            <ng-template #usrpasselse>
+                <span *ngIf = "usrpass.errors.pattern;">
+                    <b>Invalid Password, 6 - 20 digits only</b>
+                </span>
+            </ng-template>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="cpassword">Password</label>
+          <input type="password" class="form-control" id="cpassword" placeholder="Enter password" formControlName="confirmPassword" [ngStyle]="{'border-color':usrconfirmpass.invalid || register.errors?.passMismatch? 'red':'green' }">
+        </div>
+        <div class="form-group">
+          <div ngClass = "myColor" *ngIf = "usrconfirmpass.invalid && usrconfirmpass.touched">
+            <span *ngIf = "usrconfirmpass.errors.required then errRequired">
+                <!-- <b ngClass = "myColor">This field is required</b> -->
+            </span>
+          </div >
+            <div ngClass = "myColor" *ngIf = "usrconfirmpass.touched && register.errors?.passMismatch"> <!-- ? is for ignoring null -->
+                <b>Both Password Should match</b>
+            </div>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled] = "register.invalid">Submit</button>
+    <ng-template #errRequired><b>This field is required</b></ng-template>
+  </form>

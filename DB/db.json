@@ -1,0 +1,54 @@
+{
+  "restaurants": [
+    {
+      "id": 1,
+      "name": "KFC",
+      "address": "Powai Plaza",
+      "email": "KFC@kfc.com"
+    },
+    {
+      "name": "Pizza Hut",
+      "email": "pizzahut@customer.com",
+      "address": "Ghatkopar west",
+      "id": 2
+    },
+    {
+      "name": "McDonalds",
+      "address": "Ghatkopar",
+      "email": "McDonalds@customer.com",
+      "id": 3
+    },
+    {
+      "name": "Burger King",
+      "email": "BK@sample.com",
+      "address": "Sakinaka",
+      "id": 4
+    }
+  ],
+  "users": [
+    {
+      "name": "azhan",
+      "email": "azhan@gmail.com",
+      "password": "azhan",
+      "id": 1
+    },
+    {
+      "name": "prat",
+      "email": "prat@yahoo.com",
+      "password": "prat",
+      "id": 2
+    },
+    {
+      "name": "mak",
+      "email": "mak@gmail.com",
+      "password": "mak",
+      "id": 3
+    },
+    {
+      "name": "Sree",
+      "email": "sree@gmail.com",
+      "password": "AAaa11!!",
+      "id": 4
+    }
+  ]
+}
