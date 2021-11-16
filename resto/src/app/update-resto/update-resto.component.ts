@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup,FormControl } from '@angular/forms';
+import { FormGroup,FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { RestoService} from '../resto.service';
 
@@ -10,6 +10,9 @@ import { RestoService} from '../resto.service';
 })
 export class UpdateRestoComponent implements OnInit {
   alert:boolean = false;
+  name:string ="";
+  email:string = "";
+  address:string = "";
   editResto = new FormGroup({
     name: new FormControl(''),
     email: new FormControl(''),
@@ -22,9 +25,9 @@ export class UpdateRestoComponent implements OnInit {
     this.resto.getCurrentResto(this.router.snapshot.params.id)
     .subscribe((res:any)=>{
       this.editResto = new FormGroup({
-        name: new FormControl(res['name']),
-        email: new FormControl(res['email']),
-        address: new FormControl(res['address']),
+        name: new FormControl(res['name'],[Validators.required]),
+        email: new FormControl(res['email'],[Validators.required, Validators.email]),
+        address: new FormControl(res['address'],[Validators.required]),
       });
     });
   }
@@ -42,4 +45,15 @@ export class UpdateRestoComponent implements OnInit {
     this.alert = false;
   }
 
+  get rname(){
+    return this.editResto.get("name");
+  }
+
+  get remail(){
+    return this.editResto.get("email");
+  }
+
+  get raddress(){
+    return this.editResto.get("address");
+  }
 }

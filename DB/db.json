@@ -1,10 +1,10 @@
 {
   "restaurants": [
     {
-      "id": 1,
       "name": "KFC",
+      "email": "KFC@kfc.com",
       "address": "Powai Plaza",
-      "email": "KFC@kfc.com"
+      "id": 1
     },
     {
       "name": "Pizza Hut",

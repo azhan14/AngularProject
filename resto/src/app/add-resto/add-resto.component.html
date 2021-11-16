@@ -12,13 +12,40 @@
             <input type="text" class="form-control" id="name" placeholder="Enter name" formControlName="name">
         </div>
         <div class="form-group">
+          <div ngClass = "myColor" *ngIf = "rname.invalid && rname.touched">
+            <span *ngIf = "rname.errors.required then errRequired">
+                <!-- <b ngClass = "myColor">This field is required</b> -->
+            </span>
+          </div>
+        </div>
+        <div class="form-group">
             <label for="email">Email</label>
             <input type="email" class="form-control" id="email" placeholder="Enter email" formControlName="email">
+        </div>
+        <div class="form-group">
+          <div ngClass = "myColor" *ngIf = "remail.invalid && remail.touched">
+            <span *ngIf = "remail.errors.required then errRequired; else emailelse">
+                <!-- <b ngClass = "myColor">This field is required</b> -->
+            </span>
+            <ng-template #emailelse>
+                <span *ngIf = "remail.errors.email">
+                    <b>Invalid Email ID</b>
+                </span>
+            </ng-template>
+          </div>
         </div>
         <div class="form-group">
             <label for="address">Address</label>
             <input type="text" class="form-control" id="address" placeholder="Enter address" formControlName="address">
         </div>
+        <div class="form-group">
+          <div ngClass = "myColor" *ngIf = "raddress.invalid && raddress.touched">
+            <span *ngIf = "raddress.errors.required then errRequired">
+                <!-- <b ngClass = "myColor">This field is required</b> -->
+            </span>
+          </div>
+        </div>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary" [disabled] = "addResto.invalid">Submit</button>
+    <ng-template #errRequired><b>This field is required</b></ng-template>
   </form>
