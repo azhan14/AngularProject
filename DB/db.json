@@ -30,31 +30,5 @@
       "address": "Worli Seaface",
       "id": 5
     }
-  ],
-  "users": [
-    {
-      "name": "azhan",
-      "email": "azhan@gmail.com",
-      "password": "azhan",
-      "id": 1
-    },
-    {
-      "name": "prat",
-      "email": "prat@yahoo.com",
-      "password": "prat",
-      "id": 2
-    },
-    {
-      "name": "mak",
-      "email": "mak@gmail.com",
-      "password": "mak",
-      "id": 3
-    },
-    {
-      "name": "Sree",
-      "email": "sree@gmail.com",
-      "password": "AAaa11!!",
-      "id": 4
-    }
   ]
 }
