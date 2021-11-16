@@ -6,4 +6,4 @@
 
 ##### Angular properities Used : ***Routing** , **Http**, **Services**, **Reactive Forms Module**, **Form Validators***
 
-##### Extra Things Used: *** Bootstrap forms, Navbar, Cards, Alert*** , *** Json Data for DB: hosted on localhost:3000***
+##### Extra Things Used: ***Bootstrap forms, Navbar, Cards, Alert*** , ***Json Data for DB: hosted on localhost:3000***
