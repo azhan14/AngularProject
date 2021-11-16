@@ -45,6 +45,27 @@
             </span>
           </div>
         </div>
+        <div class="form-group">
+          <label for="contact">Contact</label>
+          <input type="contact" class="form-control" id="contact" placeholder="Enter contact" formControlName="contact">
+        </div>
+        <div class="form-group">
+          <div ngClass = "myColor" *ngIf = "rcontact.invalid && rcontact.touched">
+            <span *ngIf = "rcontact.errors.required then errRequired; else rcontactelse">
+                <!-- <b ngClass = "myColor">This field is required</b> -->
+            </span>
+            <ng-template #rcontactelse>
+                <span *ngIf = "rcontact.errors.pattern; else rcontactelselength">
+                    <b>Only digits are allowed</b>
+                </span>
+                <ng-template #rcontactelselength>
+                    <span *ngIf = "rcontact.errors.minlength || rcontact.errors.maxlength">
+                        <b>Only 10 - 11 digits are allowed</b>
+                    </span>
+                </ng-template>  
+            </ng-template>
+          </div>
+        </div>
     </div>
     <button type="submit" class="btn btn-primary" [disabled] = "editResto.invalid">Update</button>
     <ng-template #errRequired><b>This field is required</b></ng-template>

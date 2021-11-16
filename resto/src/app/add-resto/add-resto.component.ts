@@ -12,10 +12,12 @@ export class AddRestoComponent implements OnInit {
   name:string ="";
   email:string = "";
   address:string = "";
+  contact:string = "";
   addResto = new FormGroup({
     name: new FormControl('',[Validators.required]),
     email: new FormControl('',[Validators.required, Validators.email]),
     address: new FormControl('',[Validators.required]),
+    contact: new FormControl('',[Validators.required, Validators.minLength(10), Validators.maxLength(11),Validators.pattern("^[0-9]*$")])
   });
   constructor(private resto: RestoService) { }
 
@@ -42,5 +44,9 @@ export class AddRestoComponent implements OnInit {
 
   get raddress(){
     return this.addResto.get("address");
+  }
+
+  get rcontact(){
+    return this.addResto.get("contact");
   }
 }

@@ -4,30 +4,35 @@
       "name": "KFC",
       "email": "KFC@kfc.com",
       "address": "Powai Plaza",
+      "contact": "08042754444",
       "id": 1
     },
     {
       "name": "Pizza Hut",
       "email": "pizzahut@customer.com",
       "address": "Ghatkopar west",
+      "contact": "18002022022",
       "id": 2
     },
     {
       "name": "McDonalds",
       "address": "Ghatkopar",
       "email": "McDonalds@customer.com",
+      "contact": "1300131300",
       "id": 3
     },
     {
       "name": "Burger King",
       "email": "BK@sample.com",
       "address": "Sakinaka",
+      "contact": "07045834646",
       "id": 4
     },
     {
       "name": "Strawberry 365",
       "email": "strawberry365@snacks.com",
       "address": "Worli Seaface",
+      "contact": "07208360735",
       "id": 5
     }
   ]

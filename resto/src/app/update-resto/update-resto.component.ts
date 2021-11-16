@@ -13,10 +13,12 @@ export class UpdateRestoComponent implements OnInit {
   name:string ="";
   email:string = "";
   address:string = "";
+  contact:string = "";
   editResto = new FormGroup({
     name: new FormControl(''),
     email: new FormControl(''),
     address: new FormControl(''),
+    contact: new FormControl('')
   });
   constructor(private router: ActivatedRoute, private resto:RestoService) { }
 
@@ -28,6 +30,7 @@ export class UpdateRestoComponent implements OnInit {
         name: new FormControl(res['name'],[Validators.required]),
         email: new FormControl(res['email'],[Validators.required, Validators.email]),
         address: new FormControl(res['address'],[Validators.required]),
+        contact: new FormControl(res['contact'],[Validators.required, Validators.minLength(10), Validators.maxLength(11),Validators.pattern("^[0-9]*$")])
       });
     });
   }
@@ -55,5 +58,9 @@ export class UpdateRestoComponent implements OnInit {
 
   get raddress(){
     return this.editResto.get("address");
+  }
+
+  get rcontact(){
+    return this.editResto.get("contact");
   }
 }

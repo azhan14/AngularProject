@@ -1,23 +1,15 @@
 
   <div class="row">
-    <div class="col-md-3 my-5" *ngFor="let item of collections">
-      <mdb-card>
-        <mdb-card-img [src]="item.img" alt="Card image cap"></mdb-card-img>
-        <mdb-card-body>
-          <mdb-card-title>
-            <h4>{{ item.name }}</h4>
-          </mdb-card-title>
-
-          <mdb-card-text>
-            Address: {{ item.address }}<br>
-            Email: {{ item.email }}
-          </mdb-card-text>
-          <br>
+    <div class="col-md-4 my-5" *ngFor="let item of collections">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{ item.name }}</h5>
+          <p class="card-text">Address: {{ item.address }}<br>
+            Email: {{ item.email }}<br>
+          Contact: {{ item.contact }}</p>
           <i (click) = "deleteResto(item.id)" class="fa fa-trash" style="font-size:20px;color:red; margin-right: 20px;"></i>
           <a routerLink = "/update/{{item.id}}"> <i class="fa fa-edit" style="font-size:20px;color:blue;"></i></a>
-        </mdb-card-body>
-      </mdb-card>
+        </div>
+      </div>
     </div>
   </div>
-
-  
