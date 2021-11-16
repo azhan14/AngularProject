@@ -23,6 +23,12 @@
       "email": "BK@sample.com",
       "address": "Sakinaka",
       "id": 4
+    },
+    {
+      "name": "Strawberry 365",
+      "email": "strawberry365@snacks.com",
+      "address": "Worli Seaface",
+      "id": 5
     }
   ],
   "users": [
